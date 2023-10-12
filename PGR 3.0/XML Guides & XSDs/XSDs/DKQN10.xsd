@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:this="http://skat.dk/kriamodel/" targetNamespace="http://skat.dk/kriamodel/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="KRIAMANpresentationtypes.xsd"/>
+	<!--=======================================================-->
+	<!--=============  KRIA_presentation_request  =============-->
+	<!--=======================================================-->
+	<xs:element name="DKQN10">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestENSData" type="xs:integer" default="0"/>
+				<xs:element name="messageFunction" type="this:MessageFunctionContentTypeKM"/>
+				<xs:element name="functionalReference" type="this:FunctionalReferenceContentTypeKM"/>
+				<xs:element name="documentIssueDate" type="this:DateTimeContentTypeKM"/>
+				<xs:element name="transportOperation" type="this:transportOperationTypeKM"/>
+				<xs:element name="presentingPlace" type="this:presentingPlaceTypeKM"/>
+				<xs:element name="presentationInformation" type="this:presentationInformationTypeKM"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

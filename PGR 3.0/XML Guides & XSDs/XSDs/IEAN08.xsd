@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:this="http://skat.dk/kriamodel/" xmlns:ics2="urn:wco:datamodel:eu:ics2:2" targetNamespace="http://skat.dk/kriamodel/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:annotation>
+        <xs:documentation>Generated from baseline release</xs:documentation>
+    </xs:annotation>
+    <xs:import namespace="urn:wco:datamodel:eu:ics2:2" schemaLocation="ICS2/stypes.xsd"  />
+    <xs:include schemaLocation="KRIAMANcontroltypes.xsd" />
+    <xs:import namespace="urn:wco:datamodel:eu:ics2:2" schemaLocation="ICS2/ctypes.xsd"/>
+
+    <xs:element name="IEAN08">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ManRefNumHEA1" type="this:arrivalDeclarationTypeKM"  minOccurs="0" maxOccurs="1"/>
+                <xs:element name="MRN" type="ics2:MRNContentType1"/>
+                <xs:element name="NotDatTimHEA104" type="ics2:DateTimeContentType"/>
+                <xs:element name="customsOfficeOfControl" type="ics2:CustomsOfficeOfControlType"/>
+                <xs:element name="control" type="this:ControlTypeKM" maxOccurs="99999"/>
+                <xs:element name="personPresentingTheGoods" type="this:PersonPresentingGoodsType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

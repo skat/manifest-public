@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:this="http://skat.dk/kriamodel/" targetNamespace="http://skat.dk/kriamodel/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="KRIAMANfetchENStypes.xsd"/>
+	<!--=======================================================-->
+	<!--==============  KRIA_fetch_ENS_response  ==============-->
+	<!--=======================================================-->
+	<xs:element name="DKRE01">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="messageFunction" type="this:MessageFunctionContentTypeKM">
+					<xs:annotation>
+						<xs:documentation>
+							<ICS2CLMS>CL727</ICS2CLMS>
+							<ICS2CLTrade>CL727</ICS2CLTrade>
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="functionalReference" type="this:FunctionalReferenceContentTypeKM"/>
+				<xs:element name="documentIssueDate" type="this:DateTimeContentTypeKM"/>
+				<xs:element name="estimatedDateAndTimeOfArrival" type="this:DateTimeContentTypeKM" minOccurs="0"/>
+				<xs:element name="parameter" type="this:ParameterContentTypeKM"/>
+				<xs:element name="relatedENS" type="this:RelatedENSresponseTypeKM" minOccurs="0" maxOccurs="99999"/>
+				<xs:element name="rejectedENS" type="this:RejectedENSTypeKM" minOccurs="0" maxOccurs="99999"/>
+				<xs:element name="receptacle" type="this:ReceptacleResponseTypeKM" minOccurs="0" maxOccurs="99999"/>
+				<xs:element name="rejectedReceptacle" type="this:RejectedReceptacleResponseTypeKM" minOccurs="0" maxOccurs="99999"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

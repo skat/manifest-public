@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:this="http://skat.dk/kriamodel/" xmlns:ics2="urn:wco:datamodel:eu:ics2:2" targetNamespace="http://skat.dk/kriamodel/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Control message for detain and release - KRIA and Manifest</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="KRIAMANcontroltypes.xsd"/>
+	<xs:import namespace="urn:wco:datamodel:eu:ics2:2" schemaLocation="ICS2/ctypes.xsd"/>
+	<!--=======================================================-->
+	<!--================  KRIA_control_result  ================-->
+	<!--=======================================================-->
+	<xs:element name="DK3S08">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="arrivalDeclaration" type="this:arrivalDeclarationTypeKM" minOccurs="0"/>
+				<xs:element name="MRN" type="ics2:MRNContentType1"/>
+				<xs:element name="notificationDate" type="ics2:DateTimeContentType"/>
+				<xs:element name="scheduledControlDate" type="ics2:DateTimeContentType" minOccurs="0"/>
+				<xs:element name="customsOfficeOfControl" type="ics2:CustomsOfficeOfControlType"/>
+				<xs:element name="representative" type="ics2:RepresentativeType03" minOccurs="0"/>
+				<xs:element name="transportDocument" type="ics2:TransportDocumentType" minOccurs="0"/>
+				<xs:element name="control" type="this:ControlReportTypeKM" maxOccurs="99999"/>
+				<xs:element name="personPresentingTheGoods" type="ics2:PersonPresentingTheGoodsType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

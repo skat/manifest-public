@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:this="http://skat.dk/kriamodel/" targetNamespace="http://skat.dk/kriamodel/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:annotation>
+        <xs:documentation>Generated from baseline release</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="common/stypes_N08.xsd" />
+    <xs:include schemaLocation="common/ctypes_N08.xsd" />
+    <xs:include schemaLocation="common/km_controlmessagetypes.xsd" />
+    <xs:include schemaLocation="common/km_common_types.xsd" />
+
+    <xs:element name="IEAN99" type="this:IEAN99Type" />
+    <xs:complexType name="IEAN99Type">
+        <xs:sequence>
+            <xs:element name="arrivalDeclaration" type="this:ArrivalDeclarationTypeKM" />
+            <xs:element name="documentIssueDate" type="this:DateTimeContentType"/>
+            <xs:element name="infoErrorOrWarning" type="this:infoErrorOrWarningTypeKM" minOccurs="0" maxOccurs="99999"/>
+            <xs:element name="personLodgingTheArrivalDeclaration" type="this:personLodgingTheArrivalDeclarationType"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
