@@ -28,6 +28,18 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<!--=======================================================-->
+	<!--==================  identificationNumber  =============-->
+	<!--=======================================================-->
+	<xs:simpleType name="identificationNumberTypeKM">
+		<xs:annotation>
+			<xs:documentation>KRIA Manfest</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="17"/>
+			<xs:pattern value=".{1,17}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=======================================================-->
 	<!--=====================  DateTime  =====================-->
 	<!--=======================================================-->
 	<xs:simpleType name="DateTimeContentTypeKM">
@@ -63,6 +75,18 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<!--=======================================================-->
+	<!--================  placeIdentification  ================-->
+	<!--=======================================================-->
+	<xs:simpleType name="placeIdentificationTypeKM">
+		<xs:annotation>
+			<xs:documentation>KRIA Manfest</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="35"/>
+			<xs:pattern value=".{1,35}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=======================================================-->
 	<!--==================  documentNumber  ==================-->
 	<!--=======================================================-->
 	<xs:simpleType name="DocumentNumberContentTypeKM">
@@ -87,6 +111,17 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<!--=======================================================-->
+	<!--===============  declarationReference  ================-->
+	<!--=======================================================-->
+	<xs:simpleType name="declarationReferenceTypeKM">
+		<xs:annotation>
+			<xs:documentation>KRIA Manfest</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:totalDigits value="13"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=======================================================-->
 	<!--========================  YN  =========================-->
 	<!--=======================================================-->
 	<xs:simpleType name="YNContentTypeKM">
@@ -97,6 +132,31 @@
 			<xs:pattern value="[A-Z]{1}"/>
 			<xs:enumeration value="Y"/>
 			<xs:enumeration value="N"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=======================================================-->
+	<!--=====================  grossMass  =====================-->
+	<!--=======================================================-->
+	<xs:simpleType name="GrossMassContentTypeKM">
+		<xs:annotation>
+			<xs:documentation>KRIA Manfest</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="16"/>
+			<xs:fractionDigits value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=======================================================-->
+	<!--======================  netMass  ======================-->
+	<!--=======================================================-->
+	<xs:simpleType name="NetMassContentTypeKM">
+		<xs:annotation>
+			<xs:documentation>KRIA Manfest</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+			<xs:totalDigits value="16"/>
+			<xs:fractionDigits value="6"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<!--=======================================================-->

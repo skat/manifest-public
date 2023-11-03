@@ -5,18 +5,6 @@
 	</xs:annotation>
 	<xs:include schemaLocation="KRIAMANcommontypes.xsd"/>
 	<!--=======================================================-->
-	<!--==================  identificationNumber  =============-->
-	<!--=======================================================-->
-	<xs:simpleType name="identificationNumberTypeKM">
-		<xs:annotation>
-			<xs:documentation>KRIA Manfest</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:maxLength value="17"/>
-			<xs:pattern value=".{1,17}"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<!--=======================================================-->
 	<!--==================  arrivalNotification  ==============-->
 	<!--=======================================================-->
 	<xs:simpleType name="arrivalNotificationTypeKM">
@@ -79,17 +67,6 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<!--=======================================================-->
-	<!--================  arrivalDeclaration  =================-->
-	<!--=======================================================-->
-	<xs:simpleType name="ArrivalDeclarationTypeKM">
-		<xs:annotation>
-			<xs:documentation>KRIA Manfest</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:integer">
-			<xs:totalDigits value="13"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<!--=======================================================-->
 	<!--=====================  sequence  ======================-->
 	<!--=======================================================-->
 	<xs:simpleType name="SequenceTypeKM">
@@ -105,18 +82,6 @@
 	<!--===================  manifestItem  ====================-->
 	<!--=======================================================-->
 	<xs:simpleType name="ManifestItemTypeKM">
-		<xs:annotation>
-			<xs:documentation>KRIA Manfest</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:maxLength value="35"/>
-			<xs:pattern value=".{1,35}"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<!--=======================================================-->
-	<!--==================  unloadingPlace  ===================-->
-	<!--=======================================================-->
-	<xs:simpleType name="UnloadingPlaceTypeKM">
 		<xs:annotation>
 			<xs:documentation>KRIA Manfest</xs:documentation>
 		</xs:annotation>
@@ -163,7 +128,7 @@
 		<xs:sequence>
 			<xs:element name="sequenceNumber" type="this:SequenceTypeKM" minOccurs="0"/>
 			<xs:element name="manifestItemNumber" type="this:ManifestItemTypeKM"/>
-			<xs:element name="unloadingPlace" type="this:UnloadingPlaceTypeKM"/>
+			<xs:element name="unloadingPlace" type="this:placeIdentificationTypeKM"/>
 			<xs:element name="splitIndicator" type="this:YNContentTypeKM"/>
 			<xs:element name="transportDocumentHouseLevel" type="this:TransportDocumentTypeKM" minOccurs="0"/>
 		</xs:sequence>
@@ -217,7 +182,7 @@
 		<xs:sequence>
 			<xs:element name="receptacleIdentificationNumber" type="this:ReceptacleIdentificationContentTypeKM"/>
 			<xs:element name="manifestItemNumber" type="this:ManifestItemTypeKM"/>
-			<xs:element name="unloadingPlace" type="this:UnloadingPlaceTypeKM"/>
+			<xs:element name="unloadingPlace" type="this:placeIdentificationTypeKM"/>
 			<xs:element name="splitIndicator" type="this:YNContentTypeKM"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -229,7 +194,7 @@
 			<xs:documentation>KRIA Manfest</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="arrivalDeclaration" type="this:ArrivalDeclarationTypeKM" />
+			<xs:element name="arrivalDeclaration" type="this:declarationReferenceTypeKM" />
 			<xs:element name="relatedENS" type="this:RelatedENSTypeKM" maxOccurs="999"/>
 			<xs:element name="personPresentingTheGoods" type="this:personPresentingTheGoodsTypeKM"/>
 		</xs:sequence>
@@ -305,7 +270,7 @@
 			<xs:documentation>KRIA Manfest</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="arrivalDeclaration" type="this:ArrivalDeclarationTypeKM"/>
+			<xs:element name="arrivalDeclaration" type="this:declarationReferenceTypeKM"/>
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>

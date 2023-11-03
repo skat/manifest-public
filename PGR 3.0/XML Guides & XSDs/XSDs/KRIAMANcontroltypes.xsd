@@ -100,4 +100,9 @@
 			<xs:element name="DK3N08" type="this:DK3N08TypeKM"/>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="PersonPresentingGoodsType">
+		<xs:sequence>
+			<xs:element name="TINPLA" type="ics2:IdentificationNumberContentType1" />
+		</xs:sequence>
+	</xs:complexType>
 </xs:schema>
